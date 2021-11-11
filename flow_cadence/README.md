@@ -10,7 +10,7 @@ Install [FCL](https://docs.onflow.org/flow-cli/install/)
 
 install test dependencies
 ```
-cd cadence/tests & yarn install 
+cd tests & yarn install 
 ```
 
 start flow emulator
