@@ -1,5 +1,5 @@
-import { adminTest } from './src/setup.js'
-import { useCase } from './src/useCase.js'
+import { adminTest } from './testsuite/setup.js'
+import { useCase } from './testsuite/useCase.js'
 
 describe('flowns test case', () => {
   adminTest()

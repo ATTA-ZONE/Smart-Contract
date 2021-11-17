@@ -1,33 +1,35 @@
 ## ATTANFT contract
 
-
 ### local environment
-
-
 
 Install [FCL](https://docs.onflow.org/flow-cli/install/)
 
-
 install test dependencies
+
 ```
-cd tests & yarn install 
+yarn install
 ```
 
 start flow emulator
+
 ```
 flow emulator
 ```
 
-init emulator 
+copy env file
+
+```
+cp .env.example .env
+```
+
+init emulator
+
 ```
 yarn run init:emulator
 ```
 
 run test case
-```
-yarn run test
-```
 
-### testnet environment
-
-wip
+```
+yarn test
+```

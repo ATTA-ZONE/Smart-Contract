@@ -45,7 +45,7 @@ export const useCase = async () =>
       expect(mintRes).toBeNull()
     })
 
-    test('check domain collection with user1Authz and user2Authz', async () => {
+    test('check nft collection with user1Authz and user2Authz', async () => {
       if (network === 'testnet') {
         await buildAndSendTrx('initCollection', [], user1Authz())
         await buildAndSendTrx('initCollection', [], user2Authz())
