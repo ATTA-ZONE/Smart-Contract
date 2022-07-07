@@ -1181,10 +1181,7 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
 }
 
 contract NFTTemplateManager is ERC721Enumerable ,Ownable {
-    //using SafeMath for uint256;
-    
-    // IERC20 public ticketAddress;
-    // IERC1155 public ERC1155Address;
+
     using SafeMath for uint256;
     using Address for address;
     
@@ -1262,6 +1259,11 @@ contract NFTTemplateManager is ERC721Enumerable ,Ownable {
     
     function setBaseUri(string calldata newuri) external onlyOwner {
         _baseUri = newuri;
+    }
+
+    function setTemplateUri(uint256 templateId, string calldata uri) public onlyOwner{
+        _uriTemplate[templateId] = uri;
+        emit URI(uri, templateId);
     }
     
     function setMultipleTemplateUri(uint256[] calldata templateId, string[] calldata uri) external onlyOwner {
