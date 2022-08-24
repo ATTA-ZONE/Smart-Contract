@@ -86,17 +86,19 @@ abstract contract Ownable is Context {
 }
 
 
-contract HashUpdater is Ownable {
-    event Updated(address indexed user, uint256 index);
-    uint256 public currentIndex;
-    mapping(uint256 => uint256) public hashSaved;
 
-    function updateHash(string calldata pre_hash) external onlyOwner {
+contract HashUpdater is Ownable {
+    event Updated(address indexed user, string indexed date_str, uint256 hash );
+    mapping(string => uint256) public hashSaved;
+
+    function updateHash(string calldata date_str, string calldata pre_hash) external onlyOwner {
         uint256 hash = uint256(keccak256(abi.encodePacked(pre_hash)));
-        hashSaved[currentIndex] = hash;
-        emit Updated(_msgSender(), currentIndex);
-        currentIndex+=1;
+        hashSaved[date_str] = hash;
+        emit Updated(_msgSender(), date_str, hash);
     }
 
+    function calHash(string calldata pre_hash) public view returns(uint256) {
+        return uint256(keccak256(abi.encodePacked(pre_hash)));
+    }
 
 }
