@@ -1,7 +1,7 @@
 /**
  *Submitted for verification at BscScan.com on 2020-09-02
 */
-
+// SPDX-License-Identifier: SimPL-2.0
 pragma solidity ^0.8.0;
 
 interface IERC20 {

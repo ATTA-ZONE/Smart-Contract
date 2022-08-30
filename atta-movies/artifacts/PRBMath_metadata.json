@@ -1,0 +1,57 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Common mathematical functions used in both PRBMathSD59x18 and PRBMathUD60x18. Note that this shared library does not always assume the signed 59.18-decimal fixed-point or the unsigned 60.18-decimal fixed-point representation. When it does not, it is explicitly mentioned in the NatSpec documentation.",
+			"kind": "dev",
+			"methods": {},
+			"stateVariables": {
+				"SCALE": {
+					"details": "How many trailing decimals can be represented."
+				},
+				"SCALE_INVERSE": {
+					"details": "SCALE inverted mod 2^256."
+				},
+				"SCALE_LPOTD": {
+					"details": "Largest power of two divisor of SCALE."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"atta-movies/TBC_busd.sol": "PRBMath"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"atta-movies/TBC_busd.sol": {
+			"keccak256": "0x830aaaa07b07af0843971642163651bedf08d737657dd2f8814d80169e2dc72a",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://74ae2c4e8c386fe4fafe594e450288f0fa01c7c7f951b3bfca830ddc44082e1c",
+				"dweb:/ipfs/QmeHrYieepH4GjWBygnZqx2Q2aE9WebugLrwBn8AnZQhje"
+			]
+		}
+	},
+	"version": 1
+}

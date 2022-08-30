@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Collection of functions related to the address type",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"atta-movies/ERC721/klaytn/ERC721ManagerAutoId.sol": "Address"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"atta-movies/ERC721/klaytn/ERC721ManagerAutoId.sol": {
+			"keccak256": "0xf5586d558c7eb0b5a0ac9029314bdc4b69f2ce6bb134b94f6e6059a44cbe9aa1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://104edfc6767fe0cecb11ac4d1424dd9d26a848687ba4288bb20d5cede85d8db5",
+				"dweb:/ipfs/QmPSR4EnWraDyHSxW9LK2NxiKcPxnUSsJqyUspXZQzBFmR"
+			]
+		}
+	},
+	"version": 1
+}

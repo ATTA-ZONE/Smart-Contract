@@ -1412,6 +1412,10 @@ contract PopcornSigmoid is Context {
     // Make sure the paymentToken with decimal 18 !!
     IERC20 paymentToken;
     uint256 paymentTokenDecimalFactor=1e12;  // 1e18.div(1e6) = 1e12
+    uint256 maxTotalSupply = 20e22;
+    uint256 priceCap = 48e17;
+    uint256 supplyShift = SafeMath.mul(60, 1e18).div(10);
+    uint256 slopeFactor = 12e18;
     IERC20Minter popcornToken;
     // popcornToken 1e18.div(1e18) = 1, so no factor needed
     address recyclePool;
@@ -1424,12 +1428,11 @@ contract PopcornSigmoid is Context {
 
     // price: 1 -> 1e18
     //TODO change into internal
-    function _priceGivenSupply(uint256 _totalSupply) public pure returns (uint256) {
-        uint256 log1 = SafeMath.mul(225, 1e18).div(10);
-        uint256 log2 = _totalSupply.mul(30).mul(1e18).div(175e22);
+    function _priceGivenSupply(uint256 _totalSupply) public view returns (uint256) {
+        uint256 log2 = _totalSupply.mul(slopeFactor).div(maxTotalSupply);
 
-        uint256 denominator = PRBMathUD60x18.exp(1e19) + PRBMathUD60x18.exp(log1.add(1e19).sub(log2));
-        uint256 numerator = PRBMathUD60x18.mul(5e18, PRBMathUD60x18.exp(1e19));
+        uint256 denominator = PRBMathUD60x18.exp(1e19) + PRBMathUD60x18.exp(supplyShift.add(1e19).sub(log2));
+        uint256 numerator = PRBMathUD60x18.mul(priceCap, PRBMathUD60x18.exp(1e19));
         return PRBMathUD60x18.div(numerator, denominator);
     }
 
@@ -1439,9 +1442,9 @@ contract PopcornSigmoid is Context {
 
     // return PRBMathUD60x18 style of area
     //TODO change into internal
-    function _areaGivenSupply(uint256 _totalSupply) public pure returns (uint256) {
-        uint256 _startOffsetPartial = PRBMathUD60x18.ln(1e18 + PRBMathUD60x18.div(PRBMathUD60x18.exp(_totalSupply.mul(1e18).mul(30).div(175e22)), PRBMathUD60x18.exp(225e17)));
-        return PRBMathUD60x18.div(PRBMathUD60x18.mul(PRBMathUD60x18.mul(_startOffsetPartial, 175e22), 5e18), 3e19);
+    function _areaGivenSupply(uint256 _totalSupply) public view returns (uint256) {
+        uint256 _startOffsetPartial = PRBMathUD60x18.ln(1e18 + PRBMathUD60x18.div(PRBMathUD60x18.exp(_totalSupply.mul(slopeFactor).div(maxTotalSupply)), PRBMathUD60x18.exp(supplyShift)));
+        return PRBMathUD60x18.div(PRBMathUD60x18.mul(PRBMathUD60x18.mul(_startOffsetPartial, maxTotalSupply), priceCap), slopeFactor);
     }
 
     function areaGivenSupply() public view returns (uint256) {

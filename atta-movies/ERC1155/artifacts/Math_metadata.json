@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Standard math utilities missing in the Solidity language.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"atta-movies/ERC1155/ERC1155VendingMachine.sol": "Math"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"atta-movies/ERC1155/ERC1155VendingMachine.sol": {
+			"keccak256": "0x06aba2322274867e2e07103baaab8867c6279affe7422673609e333331b8fd27",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://17f85d60a64c1b6ed93e137ddadb612928fab9de727c81163dce8e26a3771a79",
+				"dweb:/ipfs/QmfLXoDhqVAxTGTbQ2q4KJDrP1d3UJKeDEvEXnk3Yn9bVV"
+			]
+		}
+	},
+	"version": 1
+}
